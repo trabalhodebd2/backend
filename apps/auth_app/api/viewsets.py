@@ -8,7 +8,9 @@ from .serializers import UserSerializer, UserProfileSerializer
 from .permissions import ChangePasswordPermission
 from rest_framework.permissions import IsAuthenticated
 
-from apps.custom_auth.models import User
+from django.contrib.auth import get_user_model
+
+USER = get_user_model()
 
 
 class UserViewset(ModelViewSet):
@@ -16,7 +18,7 @@ class UserViewset(ModelViewSet):
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
     filterset_fields = ['is_active', 'last_login']
-    queryset = User.objects.filter(is_active=True)
+    queryset = USER.objects.filter(is_active=True)
 
     # TODO: TESTAR MELHOR ESSA ACTION
     @action(detail=True, methods=['PATCH'], permission_classes=[IsAuthenticated, ChangePasswordPermission])

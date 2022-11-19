@@ -1,6 +1,9 @@
 from rest_framework import serializers
 
-from apps.custom_auth.models import User
+from django.contrib.auth import get_user_model
+
+
+USER = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -15,7 +18,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
 
-        model = User
+        model = USER
         fields = "__all__"
 
 
@@ -34,7 +37,6 @@ class UserProfileSerializer(serializers.ModelSerializer):
             return None
 
     class Meta:
-        model = User
+        model = USER
         fields = ['picture_thumb', 'date_joined', 'email',
                   'is_active',  'full_name', 'last_login']
-

@@ -1,4 +1,4 @@
-"""project_name URL Configuration
+"""project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -18,17 +18,17 @@ from django.urls import path, include
 
 from django.conf import settings
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
+urlpatterns = [
+    path("admin/", admin.site.urls),
     # app urls
-    path('', include('apps.custom_auth.urls')),
+    path("", include("apps.auth_app.urls")),
 ]
 
 if settings.DEBUG:
 
     # debug toolbar
-
     import debug_toolbar
-    urlpatterns += [path('__debug__/', include(debug_toolbar.urls))]
 
+    urlpatterns += [path("__debug__/", include(debug_toolbar.urls))]
