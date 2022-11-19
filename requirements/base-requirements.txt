@@ -2,3 +2,5 @@ wheel
 setuptools
 python-dotenv
 black
+pillow
+django-imagekit

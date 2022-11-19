@@ -10,6 +10,7 @@ DJANGO_BUILT_IN_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    "imagekit",  # pip install django-imagekit
     "corsheaders",  # pip install django-cors-headers
     "rest_framework",  # pip install djangorestframework
     "rest_framework_simplejwt",  # pip install djangorestframework-simplejwt,
@@ -24,4 +25,4 @@ INSTALLED_APPS = DJANGO_BUILT_IN_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
 
-# AUTH_USER_MODEL = ""
+AUTH_USER_MODEL = "auth_app.User"
