@@ -10,3 +10,9 @@ class ChangePasswordPermission(permissions.BasePermission):
     def has_object_permission(self, request, view, obj):
         user = request.user
         return user == obj
+
+
+class IsAdminOrSelfPermission(permissions.BasePermission):
+    def has_object_permission(self, request, view, obj):
+        user = request.user
+        return user == obj or user.is_superuser
