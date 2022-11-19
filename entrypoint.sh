@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# instalando bibliotecas necessarias para trabalhar com bancos espaciais
+# recomendacao do django: https://docs.djangoproject.com/en/3.2/ref/contrib/gis/install/geolibs/
+sudo apt-get install binutils libproj-dev gdal-bin
+
+sudo apt install postgis
+
 python3 -m venv env
 
 env/bin/pip install -r requirements.txt

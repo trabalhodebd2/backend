@@ -7,6 +7,7 @@ DJANGO_BUILT_IN_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.gis",
 ]
 
 THIRD_PARTY_APPS = [
@@ -19,6 +20,7 @@ THIRD_PARTY_APPS = [
 PROJECT_APPS = [
     "apps.auth_app",
     "apps.base_app",
+    "apps.hemo",
 ]
 
 INSTALLED_APPS = DJANGO_BUILT_IN_APPS + THIRD_PARTY_APPS + PROJECT_APPS

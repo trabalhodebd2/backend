@@ -24,6 +24,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # app urls
     path("", include("apps.auth_app.urls")),
+    path("", include("apps.hemo.urls")),
 ]
 
 if settings.DEBUG:
