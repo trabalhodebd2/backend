@@ -5,7 +5,7 @@ from rest_framework.decorators import action
 
 from .serializers import UserSerializer, UserProfileSerializer
 
-from .permissions import ChangePasswordPermission, IsAdminOrSelfPermission
+from .permissions import ChangePasswordPermission, UserPermission
 from rest_framework.permissions import IsAuthenticated
 
 from django.contrib.auth import get_user_model
@@ -16,21 +16,9 @@ USER = get_user_model()
 class UserViewset(ModelViewSet):
 
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [UserPermission]
     filterset_fields = ["is_active", "last_login"]
     queryset = USER.objects.filter(is_active=True)
-
-    def get_permissions(self):
-
-        permission_classes = super().get_permissions()
-
-        if self.action == "post":
-            permission_classes.clear()
-
-        if self.action in ["update", "partial_update", "delete"]:
-            permission_classes.append(IsAdminOrSelfPermission)
-
-        return permission_classes
 
     # TODO: TESTAR MELHOR ESSA ACTION
     @action(
