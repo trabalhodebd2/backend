@@ -12,6 +12,6 @@ from ..models import Hemo
 class HemoViewset(ModelViewSet):
 
     serializer_class = HemoSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     filterset_fields = ["is_active", "last_login"]
     queryset = Hemo.objects.all()
