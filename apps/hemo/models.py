@@ -6,4 +6,4 @@ from ..base_app.models import BaseModel
 
 class Hemo(BaseModel):
     title = gis_models.CharField(max_length=255, verbose_name="Nome")
-    geometria = gis_models.PointField(verbose_name="Latitude")
+    geometry = gis_models.PointField(verbose_name="Latitude")
