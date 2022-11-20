@@ -1,4 +1,5 @@
 djangorestframework
+djangorestframework-gis
 django-cors-headers
 djangorestframework-simplejwt
 django-filter

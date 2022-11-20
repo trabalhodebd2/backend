@@ -14,7 +14,8 @@ THIRD_PARTY_APPS = [
     "imagekit",  # pip install django-imagekit
     "corsheaders",  # pip install django-cors-headers
     "rest_framework",  # pip install djangorestframework
-    "rest_framework_simplejwt",  # pip install djangorestframework-simplejwt,
+    "rest_framework_gis",  # pip install djangorestframework-gis # https://medium.datadriveninvestor.com/getting-started-building-location-based-gis-rest-apis-with-python-2fcbd520b2a3
+    "rest_framework_simplejwt",  # pip install djangorestframework-simplejwt
 ]
 
 PROJECT_APPS = [
